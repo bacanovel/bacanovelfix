@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./Partials/head', {title: 'Add Novels'}) %>
+
+<body >
+    <h1 style="text-align:center;"> Add Novel</h1>
+    <form action="/novels/add" method="post">
+
+      <button class="button-submit" type="submit" style="margin-left: 1cm; margin-right: 1cm;" >Save</button>
+      <div class="mb-3" style="margin-left: 1cm; margin-right: 1cm;">
+        <label for="" class="form-label">Title:</label><br>
+        <input type="text" name="title" class="form-control" id=""  >
+      </div>
+      <div class="mb-3" style="margin-left: 1cm; margin-right: 1cm;">
+        <label for="" class="form-label">Author Name:</label><br>
+        <input type="text" name="authorName" class="form-control" id="">
+        
+      </div>
+      <div class="mb-3" style="margin-left: 1cm; margin-right: 1cm;">
+        <label for="" class="form-label">Image Url</label>
+        <input type="text" name="imageURL" class="form-control" id="">
+      </div>
+      <div class="mb-3" style="margin-left: 1cm; margin-right: 1cm;">
+        <label for="" class="form-label">Description</label>
+        <textarea class="form-control"  name="description" id="" rows="3"></textarea>
+      </div>
+
+      <%if(errors){%>
+        <% errors.split(',').forEach(el=>{ %>
+            <p style="color: red;"><strong><%= el %></strong></p>
+        <%})%>
+    <%}%>
+    </form>
+
+
+</form>
+</body>
+</html>

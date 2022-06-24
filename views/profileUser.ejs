@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./Partials/head', {title: 'Profile'}) %>
+<body >
+
+    <h1 style="text-align:center">Profile</h1>
+    <p> <strong> Email : </strong><%= data.User.email%></p>
+
+    <p> <strong> Full Name : </strong><%=data.groupName%></p>
+    <p> <strong> Date of Birth : </strong><%= formatDate(data.dateOfBirth)%></p>
+    <p> <strong> Gender : </strong><%= data.gender%></p>
+    <p> <strong> Email : </strong><%= data.User.email%></p>
+
+    
+
+
+    
+</body>
+</html>

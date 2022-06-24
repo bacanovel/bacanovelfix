@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./Partials/head', {title: 'Novel Details'}) %>
+
+<body style="text-align: center;">
+    <h1><%= data.title%></h1>
+    <p>by: <%= data.authorName%></p>
+    <p>Published at: <%=formatDate(data.createdAt)%></p>
+    <img src="<%=data.imageURL%>" alt="img">
+    <p><%=data.description%></p>
+    <%if(role === 1){%>
+    <a type="button"class="btn" href="/novels/<%=data.id%>/detail/edit" style="color: white; background-color: #B25068; margin: 1cm;">Edit</a>
+    <%}%>
+
+    
+
+</body>
+</html>

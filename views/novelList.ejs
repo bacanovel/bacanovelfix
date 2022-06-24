@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./Partials/head', {title: 'Novel List'}) %>
+
+<body style="text-align:center">
+    <h1 style="margin: 1cm;">NOVELS</h1>
+    <form action="/novels" method="get">
+        <%if(role === 1 ){%>
+    <button type="button" class="btn" style="background-color: #B25068; margin: 1cm;" ><a style="color: white;" href="/novels/add">Add Novel</a></button>
+    <div style="margin-bottom: 1cm;">
+        <%}%>
+        <input type="text"  name="search" placeholder="search..." class=" form-control-lg" style="width: 1000px; ">
+        <button type="submit" class="btn" style="width: auto;">search</button>
+    </div>
+</form>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Published</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+                <% data.forEach(el=>{%>
+                    <tr>
+                    <td><%=el.title%></td>
+                    <td><%=el.authorName%></td>
+                    <td><%=formatDate(el.createdAt)%></td>
+                    <td> 
+                        <%if(role === 1){%>
+                        <a style="color: white; background-color: #B25068; margin: 1cm;" href="/novels/<%= el.id%>/delete" type="button" class="btn" >Delete</a>
+
+                            <%}%>
+                        <a style="color: white; background-color: #E7AB79; margin: 1cm;" href="/novels/<%= el.id%>/detail/" type="button" class="btn" >Detail</a>
+                    </td>
+                    </tr>
+                <%})%>
+
+
+        </tbody>
+    </table>
+    
+</body>
+</html>

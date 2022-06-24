@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./Partials/head', {title: 'Edit Novels'}) %>
+<body>
+    <h1 style="text-align:center;"> Edit Novel</h1>
+    <form action="/novels/<%=data.id%>/detail/edit" method="post">
+      <button class="button-submit" type="submit" style="margin-left: 1cm; margin-right: 1cm;" >Save</button>
+      <div class="mb-3" style="margin-left: 1cm; margin-right: 1cm;">
+        <label for="" class="form-label">Title:</label><br>
+        <input type="text" name="title" class="form-control" id="" value="<%=data.title%>" >
+      </div>
+      <div class="mb-3" style="margin-left: 1cm; margin-right: 1cm;">
+        <label for="" class="form-label">Author Name:</label><br>
+        <input type="text" name="authorName" class="form-control" id="" value="<%=data.authorName%>" >
+        
+      </div>
+      <div class="mb-3" style="margin-left: 1cm; margin-right: 1cm;">
+        <label for="" class="form-label">Image Url</label>
+        <input type="text" name="imageURL" class="form-control" id="" value="<%=data.imageURL%>" >
+      </div>
+      <div style="margin-left: 1cm; margin-right: 1cm;">
+        <label for="">Published at:</label><br>
+        <input type="date" name="createdAt" value="<%= formatDate(data.createdAt)%>">
+    </div>
+      <div class="mb-3" style="margin-left: 1cm; margin-right: 1cm;">
+        <label for="" class="form-label">Description</label>
+        <textarea class="form-control"  name="description" id="" rows="3" value="<%=data.description%>"><%=data.description%></textarea>
+      </div>
+
+
+    </form>
+
+</body>
+</html>

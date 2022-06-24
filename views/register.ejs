@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+          <div>
+            <p>Register</p>
+          </div>
+          <% if(errors){ %>
+            <pre style="color: red ;"><%=errors%></pre>
+            <% } %>
+              <div>
+                <div >
+                  <form action="/register" method="POST">
+                    <div>
+                      <input type="email"name="email" placeholder="Email" aria-label="Username">
+                    </div>
+                    <div>
+                      <input type="password" name="password" placeholder="Password"
+                        aria-label="Password" >
+                    </div>
+                    <div >
+                      <input type="date" name="dateOfBirth">
+                    </div>
+                </div>
+                <div >
+                  <div>
+                    <input type="text"  placeholder="First Name" name="firstName">
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Last Name" name="lastName">
+                  </div>
+                  <div >
+                    <select name="gender">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                    <label>Gender</label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit">Register</button>
+              </form>
+              <p>Already have Account? <a href="/login">Login Here</a></p>
+        </div>
+      </div>
+</body>
+</html>
